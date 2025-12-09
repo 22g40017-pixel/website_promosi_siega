@@ -762,3 +762,126 @@
 </div>
 </section>
 
+  </div>
+</div>
+</section>
+    <!-- Pendaftaran Form -->
+    <section id="pendaftaran" class="py-12 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-6 reveal">
+        <h2 class="text-3xl font-bold text-center mb-6 text-blue-800">Pendaftaran</h2>
+        <form id="regForm" class="bg-white p-6 rounded-xl shadow max-w-2xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-4">
+            <input id="nama" name="nama" placeholder="Nama Lengkap" class="border p-3 rounded" required />
+            <input id="email" name="email" type="email" placeholder="Email" class="border p-3 rounded" required />
+            <input id="phone" name="phone" placeholder="No. WhatsApp" class="border p-3 rounded" required />
+            <select id="program" name="program" class="border p-3 rounded">
+              <option value="">Pilih Program</option>
+              <option>Sistem Informasi</option>
+              <option>E-Commerce</option>
+              <option>Game Technology</option>
+              <option>Akuntansi & SI</option>
+            </select>
+          </div>
+          <div class="mt-4 flex items-center gap-3"><input type="checkbox" id="agree" required /><label for="agree" class="text-sm text-gray-600">Saya menyetujui data ini digunakan untuk proses pendaftaran</label></div>
+          <div class="mt-4"><button type="submit" class="btn">Kirim Pendaftaran</button><button type="button" id="resetForm" class="ml-3 px-4 py-2 rounded border">Reset</button></div>
+          <p id="formMsg" class="mt-3 text-sm text-green-600 hidden"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Kontak + Maps -->
+    <section id="kontak" class="py-12 bg-white">
+      <div class="max-w-6xl mx-auto px-6 reveal">
+        <h2 class="text-3xl font-bold text-center mb-6 text-blue-800">Kontak Kami</h2>
+        <div class="grid md:grid-cols-2 gap-6 items-start">
+          <div>
+            <p class="text-gray-700">Alamat: Jl. Pawiyatan Luhur IV/1, Bendan Dhuwur, Semarang</p>
+            <p class="text-gray-700 mt-2">Jam Operasional : Senin 08.00 - 15.00</p>
+            <p class="text-gray-700 mt-2">WhatsApp: <a href="https://wa.me/6285727284162" class="text-blue-600">0857-2728-4162</a></p>
+          </div>
+          <div>
+            <div class="w-full h-72 rounded-xl overflow-hidden shadow">
+              <iframe class="w-full h-full" frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31693.729354!2d110.4022957!3d-7.0051458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708c354c30bdab%3A0x2eec19b77f5e74eb!2sSemarang!5e0!3m2!1sen!2sid!4v1700000000000" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-white mt-8">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6 items-start">
+      <div>
+        <div class="text-xl font-bold" style="color:var(--blue)">SIEGA</div>
+        <p class="text-sm text-gray-600 mt-2">Pusat pengembangan pendidikan berbasis teknologi dan bisnis masa depan.</p>
+        <div class="mt-4 flex gap-3"><a href="#" class="text-blue-600">Instagram</a><a href="#" class="text-blue-600">YouTube</a><a href="#" class="text-blue-600">TikTok</a></div>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Quick Links</h4>
+        <ul class="text-sm text-gray-600 space-y-1"><li><a href="#kurikulum">Kurikulum</a></li><li><a href="#prestasi">Prestasi</a></li><li><a href="#berita">Berita</a></li><li><a href="#pendaftaran">Pendaftaran</a></li></ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Kontak</h4>
+        <p class="text-sm text-gray-600">Jl. Pawiyatan Luhur IV/1, Semarang</p>
+        <p class="text-sm text-gray-600 mt-2">Senin - Jumat, 08:00 - 15:00</p>
+        <a href="https://wa.me/6285727284162" class="inline-block mt-3 btn">Hubungi via WA</a>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 mt-6 text-center text-gray-500">© 2025 SIEGA Unika Soegijapranata</div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="whatsapp-fab" href="https://wa.me/6285727284162" target="_blank" aria-label="WhatsApp">💬</a>
+
+  <!-- lightbox -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
+
+  <script>
+    // mobile menu toggle
+    document.getElementById('burger').addEventListener('click', function(){ document.getElementById('mobileMenu').classList.toggle('hidden'); });
+
+    // dark mode persistent
+    const root = document.body;
+    const darkToggle = document.getElementById('darkToggle');
+    function applyTheme(t){ if(t==='dark'){ root.setAttribute('data-theme','dark'); darkToggle.textContent='☀️'} else { root.setAttribute('data-theme','light'); darkToggle.textContent='🌙' } }
+    const saved = localStorage.getItem('siega-theme')||'light'; applyTheme(saved);
+    darkToggle.addEventListener('click', ()=>{ const cur=root.getAttribute('data-theme')==='dark'?'light':'dark'; applyTheme(cur); localStorage.setItem('siega-theme',cur); });
+
+    // active nav highlight
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    const sections = document.querySelectorAll('section');
+    function setActive(){ let current=''; sections.forEach(s=>{ const top=s.offsetTop-160; if(window.pageYOffset>=top) current=s.id }); navLinks.forEach(a=>{ a.classList.remove('active'); if(a.getAttribute('href')=='#'+current) a.classList.add('active') }); }
+    window.addEventListener('scroll', setActive); window.addEventListener('load', setActive);
+
+    // hero slider (pure js)
+    (function(){ const slides=document.getElementById('slides'); const count=slides.children.length; let idx=0; const dotsWrap=document.getElementById('dots'); for(let i=0;i<count;i++){ const d=document.createElement('button'); d.className='dot'; d.dataset.i=i; d.addEventListener('click', ()=>goTo(i)); dotsWrap.appendChild(d);} function updateDots(){ Array.from(dotsWrap.children).forEach((b,i)=> b.classList.toggle('active', i===idx)); }
+      function goTo(i){ idx=(i+count)%count; slides.style.transform='translateX(-'+(idx*100)+'%)'; updateDots(); }
+      document.getElementById('prevSlide').addEventListener('click', ()=> goTo(idx-1)); document.getElementById('nextSlide').addEventListener('click', ()=> goTo(idx+1)); updateDots(); let auto=setInterval(()=> goTo(idx+1),6000); slides.parentElement.addEventListener('mouseenter', ()=> clearInterval(auto)); slides.parentElement.addEventListener('mouseleave', ()=> auto=setInterval(()=> goTo(idx+1),6000));
+    })();
+
+    // mini carousels
+    function initMiniCarousel(trackId, prevId, nextId){ const track=document.getElementById(trackId); const prev=document.getElementById(prevId); const next=document.getElementById(nextId); if(!track) return; const itemWidth=track.querySelector('.carousel-item').offsetWidth+16; prev.addEventListener('click', ()=> track.scrollBy({left:-itemWidth,behavior:'smooth'})); next.addEventListener('click', ()=> track.scrollBy({left:itemWidth,behavior:'smooth'})); }
+    initMiniCarousel('prestasiTrack','prevPrestasi','nextPrestasi'); initMiniCarousel('newsTrack','prevNews','nextNews');
+
+    // reveal on scroll
+    const reveals=document.querySelectorAll('.reveal'); const io=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } }); },{threshold:0.12}); reveals.forEach(r=> io.observe(r));
+
+    // form
+    const regForm=document.getElementById('regForm'); if(regForm){ regForm.addEventListener('submit', function(e){ e.preventDefault(); const nama=document.getElementById('nama').value.trim(); const email=document.getElementById('email').value.trim(); const phone=document.getElementById('phone').value.trim(); const agree=document.getElementById('agree').checked; if(!nama||!email||!phone||!agree){ alert('Mohon lengkapi semua field dan setujui kebijakan.'); return } document.getElementById('formMsg').textContent='Terima kasih! Pendaftaran Anda telah diterima.'; document.getElementById('formMsg').classList.remove('hidden'); regForm.reset(); }); document.getElementById('resetForm').addEventListener('click', ()=>{ regForm.reset(); document.getElementById('formMsg').classList.add('hidden'); }); }
+
+    // basic search filter
+    function basicSearch(query){ query=query.toLowerCase(); const cards=document.querySelectorAll('#berita .card-premium, #berita .carousel-item'); cards.forEach(c=>{ c.style.display = c.textContent.toLowerCase().includes(query) ? '' : 'none'; }); }
+    const deskSearch=document.getElementById('globalSearch'); if(deskSearch) deskSearch.addEventListener('input',(e)=> basicSearch(e.target.value)); const mobileSearch=document.getElementById('mobileSearch'); if(mobileSearch) mobileSearch.addEventListener('input',(e)=> basicSearch(e.target.value));
+
+    // keyboard slide
+    document.addEventListener('keydown', function(e){ if(e.key==='ArrowLeft') document.getElementById('prevSlide').click(); if(e.key==='ArrowRight') document.getElementById('nextSlide').click(); });
+
+    // lightbox options
+    if(window.lightbox) lightbox.option({resizeDuration:200,wrapAround:true});
+  </script>
+</body>
+</html>
+
+
