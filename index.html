@@ -1,1 +1,126 @@
-p
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIEGA — Unika Soegijapranata</title>
+
+  <!-- Tailwind -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+
+  <!-- Global Styling -->
+  <style>
+    :root {
+      --blue:#0b3d91;
+      --soft-blue:#e9f1ff;
+      --yellow:#ffd84d;
+      --muted:#6b7280;
+      --bg:#f6f8fb;
+      --card:#ffffff;
+    }
+    [data-theme="dark"] {
+      --bg:#071025;
+      --card:#0f1724;
+      --muted:#9aa6b2;
+    }
+
+    html { scroll-behavior:smooth }
+    body {
+      font-family:Inter,ui-sans-serif,system-ui,Arial,sans-serif;
+      background:var(--bg);
+      color:#0f172a;
+      transition:background .25s,color .25s;
+    }
+
+    /* Navbar */
+    header {
+      position:fixed;
+      top:0; left:0;
+      width:100%;
+      z-index:60;
+      background:var(--card);
+      backdrop-filter:blur(6px);
+      box-shadow:0 6px 18px rgba(12,18,44,0.06)
+    }
+    .nav-link { color:#374151 }
+    .nav-link.active { color:var(--blue); font-weight:700 }
+
+    /* Card Premium */
+    .card-premium {
+      background:linear-gradient(180deg,rgba(255,255,255,0.8),rgba(255,255,255,0.6));
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 8px 30px rgba(15,23,42,0.06);
+      transition:transform .35s ease,box-shadow .35s ease;
+    }
+    [data-theme="dark"] .card-premium {
+      background:linear-gradient(180deg,rgba(20,25,35,0.8),rgba(15,20,28,0.7));
+    }
+    .card-premium:hover {
+      transform:translateY(-8px) scale(1.01);
+      box-shadow:0 18px 40px rgba(11,61,145,0.08);
+    }
+
+    /* Avatar */
+    .avatar {
+      width:100%;
+      height:160px;
+      border-radius:12px;
+      object-fit:cover;
+      background:#e6edf9;
+      display:block;
+    }
+    .avatar-placeholder {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:160px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#eef6ff,#fff9e6);
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    /* Slider */
+    .slider { position:relative; overflow:hidden; border-radius:16px }
+    .slides { display:flex; transition:transform .7s cubic-bezier(.22,.9,.35,1) }
+    .slide { min-width:100%; padding:36px; box-sizing:border-box }
+
+    /* Animations */
+    .reveal {
+      opacity:0;
+      transform:translateY(12px) scale(.98);
+      transition:opacity .6s ease,transform .6s ease;
+    }
+    .reveal.visible { opacity:1; transform:none }
+
+    /* WhatsApp Floating */
+    .whatsapp-fab{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      z-index:80;
+      width:56px;height:56px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#25D366,#128C7E);
+      color:white;
+      box-shadow:0 12px 28px rgba(15,23,42,0.18);
+    }
+
+    @media (max-width:768px){
+      .desktop-nav{display:none}
+      .mobile-nav{display:block}
+      .avatar{height:140px}
+    }
+    @media (min-width:769px){
+      .mobile-nav{display:none}
+      .desktop-nav{display:flex}
+    }
+  </style>
+</head>
+
+<body class="antialiased" data-theme="light">
