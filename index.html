@@ -124,3 +124,81 @@
 </head>
 
 <body class="antialiased" data-theme="light">
+
+<!-- NAVBAR -->
+<header id="siteHeader">
+  <style>
+    /* Dropdown Improved */
+    .dropdown { position:relative; display:inline-block }
+    .dropdown-trigger { padding:8px 4px; display:flex; align-items:center; gap:4px; cursor:pointer }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+      opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto;
+    }
+
+    .dropdown-content {
+      position:absolute;
+      left:0; top:calc(100% + 10px);
+      background:var(--card);
+      min-width:240px;
+      padding:8px 0;
+      border-radius:12px;
+      box-shadow:0 10px 28px rgba(15,23,42,0.1);
+      opacity:0; visibility:hidden;
+      transform:translateY(10px);
+      transition:.25s ease;
+      z-index:999;
+      pointer-events:none;
+    }
+
+   .dropdown-content a {
+      padding:10px 16px;
+      display:block;
+      font-size:14px;
+      color:#374151;
+      transition:.2s;
+    }
+    .dropdown-content a:hover {
+      background:var(--soft-blue);
+      color:var(--blue);
+    }
+
+    #mobileMenu { max-height:0; overflow:hidden; transition:max-height .35s ease }
+    #mobileMenu.open { max-height:600px }
+  </style>
+
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      <div class="w-12 h-12 rounded-lg flex items-center justify-center text-white font-bold"
+           style="background:var(--blue);font-size:18px">S</div>
+      <div>
+        <div class="font-bold" style="color:var(--blue)">SIEGA</div>
+        <div class="text-xs text-gray-500">Unika Soegijapranata</div>
+      </div>
+    </div>
+
+    <!-- Desktop Menu -->
+    <nav class="desktop-nav items-center space-x-6 font-medium">
+      <a href="#home" class="nav-link">Beranda</a>
+
+      <div class="dropdown">
+        <button class="dropdown-trigger nav-link">Akademik ▾</button>
+        <div class="dropdown-content">
+          <a href="#kurikulum">Program Studi & Kurikulum</a>
+          <a href="#kalender">Kalender Pendidikan</a>
+          <a href="#dosen-tendik">Dosen & Tendik</a>
+          <a href="#fasilitas">Fasilitas</a>
+          <a href="#kerjasama">Kerjasama Industri</a>
+          <a href="#prestasi">Prestasi</a>
+        </div>
+      </div>
+
+      <a href="#berita" class="nav-link">Berita</a>
+      <a href="#kegiatan" class="nav-link">Kegiatan</a>
+      <a href="#pendaftaran" class="nav-link">Pendaftaran</a>
+      <a href="#kontak" class="nav-link">Kontak</a>
+    </nav>
+
