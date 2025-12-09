@@ -202,3 +202,131 @@
       <a href="#kontak" class="nav-link">Kontak</a>
     </nav>
 
+    <!-- Tools -->
+    <div class="flex items-center gap-4">
+      <div class="hidden md:flex items-center bg-gray-100 rounded-lg px-3 py-1">
+        <input id="globalSearch" placeholder="Cari kegiatan atau berita..." class="bg-transparent outline-none text-sm" />
+      </div>
+      <button id="burger" class="text-2xl md:hidden">☰</button>
+    </div>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="bg-white border-t">
+    <div class="px-6 py-4">
+      <a href="#home" class="block py-2">Beranda</a>
+      <details class="py-2">
+        <summary class="cursor-pointer font-medium">Akademik</summary>
+        <div class="mt-2 pl-4 space-y-1">
+          <a href="#kurikulum" class="block py-1">Program Studi & Kurikulum</a>
+          <a href="#kalender" class="block py-1">Kalender Pendidikan</a>
+          <a href="#dosen-tendik" class="block py-1">Dosen & Tendik</a>
+          <a href="#fasilitas" class="block py-1">Fasilitas</a>
+        </div>
+      </details>
+
+      <a href="#berita" class="block py-2">Berita</a>
+      <a href="#pendaftaran" class="block py-2">Pendaftaran</a>
+
+      <input id="mobileSearch" placeholder="Cari..." class="w-full border rounded px-3 py-2 mt-4" />
+    </div>
+  </div>
+
+</header>
+
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-12 h-12 rounded-lg flex items-center justify-center text-white font-bold"
+        style="background:var(--blue);font-size:18px">S</div>
+      <div>
+        <div style="color:var(--blue);font-weight:700">SIEGA</div>
+        <div class="text-xs text-gray-500">Unika Soegijapranata</div>
+      </div>
+    </div>
+
+    <!-- DESKTOP NAV -->
+    <nav class="desktop-nav hidden md:flex items-center space-x-6 font-medium">
+      <a href="#home" class="nav-link">Beranda</a>
+
+      <!-- FIXED DROPDOWN -->
+      <div class="dropdown">
+        <button class="dropdown-trigger nav-link">Akademik ▾</button>
+
+        <!-- hover buffer -->
+        <div class="dropdown-hover-area"></div>
+
+        <div class="dropdown-content">
+          <a href="#kurikulum">Program Studi & Kurikulum</a>
+          <a href="#kalender">Kalender Pendidikan</a>
+          <a href="#dosen-tendik">Dosen & Tendik</a>
+          <a href="#fasilitas">Fasilitas</a>
+          <a href="#kerjasama">Kerjasama Industri</a>
+          <a href="#prestasi">Prestasi</a>
+        </div>
+      </div>
+
+      <a href="#berita" class="nav-link">Berita</a>
+      <a href="#kegiatan" class="nav-link">Kegiatan</a>
+      <a href="#pendaftaran" class="nav-link">Pendaftaran</a>
+      <a href="#kontak" class="nav-link">Kontak</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <div class="hidden md:flex items-center bg-gray-100 rounded-lg px-3 py-1">
+        <input id="globalSearch" placeholder="Cari kegiatan atau berita..."
+          class="bg-transparent outline-none text-sm" />
+      </div>
+      <button id="darkToggle" class="p-2 rounded-md border border-gray-200 hidden md:inline">🌙</button>
+
+      <div class="mobile-nav md:hidden"><button id="burger" class="text-2xl">☰</button></div>
+    </div>
+  </div>
+
+  <!-- MOBILE NAV -->
+  <div id="mobileMenu" class="bg-white border-t">
+    <div class="px-6 py-4">
+      <a href="#home" class="block py-2">Beranda</a>
+
+      <details class="py-2">
+        <summary class="cursor-pointer font-medium">Akademik</summary>
+        <div class="mt-2 pl-4 space-y-1">
+          <a href="#kurikulum" class="block py-1">Program Studi & Kurikulum</a>
+          <a href="#kalender" class="block py-1">Kalender Pendidikan</a>
+          <a href="#dosen-tendik" class="block py-1">Dosen & Tendik</a>
+          <a href="#fasilitas" class="block py-1">Fasilitas</a>
+        </div>
+      </details>
+
+      <a href="#berita" class="block py-2">Berita</a>
+      <a href="#pendaftaran" class="block py-2">Pendaftaran</a>
+
+      <div class="mt-4">
+        <input id="mobileSearch" placeholder="Cari..." class="w-full border rounded px-3 py-2" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Mobile toggle
+    const burger = document.getElementById("burger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    burger.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+    });
+
+    // Active link highlight
+    const links = document.querySelectorAll(".nav-link");
+    function highlightActive() {
+      let pos = window.scrollY + 200;
+      links.forEach(l => {
+        let section = document.querySelector(l.getAttribute("href"));
+        if (section && section.offsetTop <= pos && section.offsetTop + section.offsetHeight > pos) {
+          links.forEach(i => i.classList.remove("active"));
+          l.classList.add("active");
+        }
+      });
+    }
+    window.addEventListener("scroll", highlightActive);
+  </script>
+</header>
