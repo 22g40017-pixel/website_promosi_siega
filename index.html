@@ -720,25 +720,62 @@ return false;
 
 
   <!-- Kalender Pendidikan -->
-    <section id="kalender" class="py-12 bg-gray-50">
-      <div class="max-w-6xl mx-auto px-6 reveal">
-        <h2 class="text-3xl font-bold text-center mb-6 text-blue-800">Kalender Pendidikan</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="card-premium text-center">
-            <div class="text-sm text-gray-500">Awal Perkuliahan</div>
-            <div class="text-xl font-bold mt-2">1 September 2026</div>
-          </div>
-          <div class="card-premium text-center">
-            <div class="text-sm text-gray-500">UTS Semester Gasal</div>
-            <div class="text-xl font-bold mt-2">2–8 November 2026</div>
-          </div>
-          <div class="card-premium text-center">
-            <div class="text-sm text-gray-500">UAS Semester Gasal</div>
-            <div class="text-xl font-bold mt-2">10–16 Januari 2027</div>
-          </div>
+<section id="kalender" class="py-16 bg-gradient-to-b from-blue-50 to-white">
+  <div class="max-w-6xl mx-auto px-6 reveal">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-blue-900 tracking-wide">Kalender Pendidikan</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div class="card-premium bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl hover:scale-105 transition-all relative overflow-hidden">
+        <div class="absolute top-4 right-4 text-yellow-400 text-3xl animate-pulse">📅</div>
+        <div class="flex flex-col items-center">
+          <div class="text-sm text-gray-500 mb-2">Awal Perkuliahan</div>
+          <div class="text-2xl font-bold text-blue-800">1 September 2026</div>
         </div>
       </div>
-    </section>
+
+      <!-- Card 2 -->
+      <div class="card-premium bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl hover:scale-105 transition-all relative overflow-hidden">
+        <div class="absolute top-4 right-4 text-green-400 text-3xl animate-pulse">📝</div>
+        <div class="flex flex-col items-center">
+          <div class="text-sm text-gray-500 mb-2">UTS Semester Gasal</div>
+          <div class="text-2xl font-bold text-blue-800">2–8 November 2026</div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card-premium bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl hover:scale-105 transition-all relative overflow-hidden">
+        <div class="absolute top-4 right-4 text-red-400 text-3xl animate-pulse">📚</div>
+        <div class="flex flex-col items-center">
+          <div class="text-sm text-gray-500 mb-2">UAS Semester Gasal</div>
+          <div class="text-2xl font-bold text-blue-800">10–16 Januari 2027</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Tambahan CSS Animasi -->
+<style>
+  .card-premium {
+    position: relative;
+    cursor: default;
+    transition: all 0.3s ease;
+  }
+  .card-premium:hover {
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+  }
+  .animate-pulse {
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { transform: scale(1); opacity:1; }
+    50% { transform: scale(1.2); opacity:0.7; }
+  }
+</style>
+
 
     <!-- Dosen & Tendik -->
 <section id="dosen-tendik" class="py-16 bg-gradient-to-b from-white to-blue-50/40">
@@ -952,216 +989,746 @@ return false;
 </style>
 
   <!-- Fasilitas -->
-    <section id="fasilitas" class="py-12 bg-gray-50">
-      <div class="max-w-6xl mx-auto px-6 reveal">
-        <h2 class="text-3xl font-bold text-center mb-6 text-blue-800">Fasilitas</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="card-premium text-center">
-            <div class="h-40 bg-gray-100 rounded-xl mb-4 flex items-center justify-center">Laboratorium</div>
-            <h3 class="font-semibold">Laboratorium Komputer</h3>
-            <p class="text-sm text-gray-600 mt-2">Perangkat modern untuk praktikum dan riset.</p>
-          </div>
+<section id="fasilitas" class="py-24 bg-gradient-to-b from-white to-blue-50 relative overflow-hidden">
+  <!-- Background Blur -->
+  <div class="absolute top-0 left-0 w-72 h-72 bg-blue-200/40 blur-[110px] rounded-full -z-10"></div>
+  <div class="absolute bottom-0 right-0 w-72 h-72 bg-indigo-300/40 blur-[130px] rounded-full -z-10"></div>
 
-          <div class="card-premium text-center">
-            <div class="h-40 bg-gray-100 rounded-xl mb-4 flex items-center justify-center">VR</div>
-            <h3 class="font-semibold">Alat VR</h3>
-            <p class="text-sm text-gray-600 mt-2">Perangkat Virtual Reality untuk pembelajaran interaktif.</p>
-          </div>
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-extrabold text-center mb-14 text-blue-900 tracking-wide">
+      Fasilitas
+    </h2>
 
-          <div class="card-premium text-center">
-            <div class="h-40 bg-gray-100 rounded-xl mb-4 flex items-center justify-center">Selasar</div>
-            <h3 class="font-semibold">Selasar / Ruang Komunitas</h3>
-            <p class="text-sm text-gray-600 mt-2">Area untuk diskusi, showcase projek, dan acara komunitas.</p>
-          </div>
-        </div>
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Laboratorium -->
+      <div class="fasilitas-card">
+        <img src="assets/img/laboratorium_siega.png" alt="Laboratorium Komputer" class="fasilitas-img">
+        <h3 class="fasilitas-title">Laboratorium Komputer</h3>
+        <p class="fasilitas-desc">Perangkat modern untuk praktikum dan riset.</p>
       </div>
-    </section>
+
+      <!-- VR -->
+      <div class="fasilitas-card">
+        <img src="assets/img/VR_siega.jpg" alt="Alat VR" class="fasilitas-img">
+        <h3 class="fasilitas-title">Alat VR</h3>
+        <p class="fasilitas-desc">Perangkat Virtual Reality untuk pembelajaran interaktif.</p>
+      </div>
+
+      <!-- Selasar -->
+      <div class="fasilitas-card">
+        <img src="assets/img/selasar_siega_unika.jpg" alt="Selasar / Ruang Komunitas" class="fasilitas-img">
+        <h3 class="fasilitas-title">Selasar / Ruang Komunitas</h3>
+        <p class="fasilitas-desc">Area untuk diskusi, showcase projek, dan acara komunitas.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .fasilitas-card {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(15px);
+    border-radius: 22px;
+    padding: 28px 20px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.7);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: all .35s ease;
+    position: relative;
+  }
+
+  .fasilitas-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.15);
+    border-color: rgba(59,130,246,0.5);
+  }
+
+  .fasilitas-card::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #93c5fd66, #a5b4fc66);
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0;
+    transition: .4s ease;
+  }
+
+  .fasilitas-card:hover::after {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  .fasilitas-img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  }
+
+  .fasilitas-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 8px;
+  }
+
+  .fasilitas-desc {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+</style>
+
 
     <!-- Kerjasama Industri -->
-    <section id="kerjasama" class="py-12">
-      <div class="max-w-6xl mx-auto px-6 reveal">
-        <h2 class="text-3xl font-bold text-center mb-6 text-blue-800">Kerjasama Industri</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="card-premium text-center">
-            <h3 class="font-semibold">Polytron</h3>
-            <p class="text-sm text-gray-600 mt-2">Pelatihan & Magang</p>
-          </div>
-          <div class="card-premium text-center">
-            <h3 class="font-semibold">SMA Theresiana</h3>
-            <p class="text-sm text-gray-600 mt-2">Pelatihan & Magang</p>
-          </div>
-          <div class="card-premium text-center">
-            <h3 class="font-semibold">Gamelab</h3>
-            <p class="text-sm text-gray-600 mt-2">Pelatihan & Magang</p>
-          </div>
+<section id="kerjasama" class="py-24 bg-gradient-to-b from-white to-blue-50 relative overflow-hidden">
+
+  <!-- Background Blur Elements -->
+  <div class="absolute top-0 left-0 w-72 h-72 bg-blue-200/40 blur-[110px] rounded-full -z-10"></div>
+  <div class="absolute bottom-0 right-0 w-72 h-72 bg-indigo-300/40 blur-[130px] rounded-full -z-10"></div>
+
+  <div class="max-w-6xl mx-auto px-6">
+
+    <h2 class="text-4xl font-extrabold text-center mb-14 text-blue-900 tracking-wide drop-shadow-sm">
+      Kerjasama Industri
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- CARD TEMPLATE -->
+      <div class="industri-card">
+        <div class="industri-logo">
+          <img src="assets/img/polytron.jpg" alt="Polytron Logo" />
         </div>
+        <h3 class="industri-name">Polytron</h3>
+        <p class="industri-desc">Pelatihan & Magang</p>
       </div>
-    </section>
 
-    <!-- Prestasi (carousel) -->
-    <section id="prestasi" class="py-12 bg-white">
-      <div class="max-w-6xl mx-auto px-6 reveal">
-        <h2 class="text-3xl font-bold text-center mb-6 text-blue-800">Prestasi</h2>
-        <div class="carousel mb-4">
-          <div class="flex items-center justify-between mb-3">
-            <div class="text-sm text-gray-600">Beberapa prestasi unggulan</div>
-            <div class="flex gap-2">
-              <button id="prevPrestasi" class="px-3 py-1 rounded border">◀</button>
-              <button id="nextPrestasi" class="px-3 py-1 rounded border">▶</button>
-            </div>
-          </div>
-          <div class="carousel-track" id="prestasiTrack">
-            <div class="carousel-item card-premium p-4">
-              <div class="h-36 bg-gray-100 rounded mb-3"></div>
-              <h3 class="font-semibold">Juara 2 Inovasi Kota Semarang</h3>
-              <p class="text-sm text-gray-600 mt-1">29 Nov 2024</p>
-            </div>
-            <div class="carousel-item card-premium p-4">
-              <div class="h-36 bg-gray-100 rounded mb-3"></div>
-              <h3 class="font-semibold">Mahasiswa Raih Digital Talent</h3>
-              <p class="text-sm text-gray-600 mt-1">Program pelatihan Kominfo</p>
-            </div>
-            <div class="carousel-item card-premium p-4">
-              <div class="h-36 bg-gray-100 rounded mb-3"></div>
-              <h3 class="font-semibold">Innovative Project Showcase</h3>
-              <p class="text-sm text-gray-600 mt-1">Proyek kota cerdas</p>
-            </div>
-          </div>
+      <div class="industri-card">
+        <div class="industri-logo">
+          <img src="assets/img/smatheresiana.jpg" alt="SMA Theresiana Logo" />
         </div>
+        <h3 class="industri-name">SMA Theresiana</h3>
+        <p class="industri-desc">Pelatihan & Magang</p>
       </div>
-    </section>
 
-    <!-- Berita -->
-    <section id="berita" class="py-12 bg-gray-50">
-      <div class="max-w-6xl mx-auto px-6 reveal">
-        <h2 class="text-3xl font-bold text-center mb-6 text-blue-800">Berita & Kegiatan</h2>
-
-        <div class="carousel mb-6">
-          <div class="flex items-center justify-between mb-3">
-            <div class="text-sm text-gray-600">Berita Terbaru</div>
-            <div class="flex gap-2">
-              <button id="prevNews" class="px-3 py-1 rounded border"></button>
-              <button id="nextNews" class="px-3 py-1 rounded border"></button>
-            </div>
-          </div>
-          <div class="carousel-track" id="newsTrack">
-            <article class="carousel-item card-premium p-4 search-item">
-  <h3 class="font-semibold">Mahasiswa Sukses Raih Peluang Karir</h3>
-  <p class="text-sm text-gray-600 mt-1">Program Digital Talent Kominfo memberikan pelatihan praktis.</p>
-</article>
-
-<article class="carousel-item card-premium p-4 search-item">
-  <h3 class="font-semibold">Juara 2 Gelar Inovasi Teknologi</h3>
-  <p class="text-sm text-gray-600 mt-1">Proyek Kota Cerdas tim kami.</p>
-</article>
-
-<article class="carousel-item card-premium p-4 search-item">
-  <h3 class="font-semibold">Workshop AR</h3>
-  <p class="text-sm text-gray-600 mt-1">Workshop permainan augmented reality.</p>
-</article>
-
-          </div>
+      <div class="industri-card">
+        <div class="industri-logo">
+          <img src="assets/img/gamelab.jpg" alt="Gamelab Logo" />
         </div>
+        <h3 class="industri-name">Gamelab</h3>
+        <p class="industri-desc">Pelatihan & Magang</p>
+      </div>
 
-    <!-- Galeri Kegiatan-->
-<section id="galeri" class="py-12 bg-white dark:bg-gray-900">
-<div class="max-w-6xl mx-auto px-6 reveal">
-<h2 class="text-3xl font-bold text-center mb-6 text-blue-800 dark:text-white">Galeri</h2>
-<div class="grid md:grid-cols-3 gap-6 animate-fadeIn">
-
-
-<div class="group cursor-pointer gallery-item animate-item">
-<a href="img-namafile.jpg" data-lightbox="gallery" data-title="KKL Bali 2025">
-<img src="assets/img/KKLBali.jpg" class="rounded-xl w-full h-48 object-cover shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl" />
-</a>
-<p class="mt-2 text-center text-gray-700 dark:text-gray-300 font-medium">KKL Bali 2025</p>
-</div>
-
-
-<div class="group cursor-pointer gallery-item animate-item">
-<a href="img-namafile.jpg" data-lightbox="gallery" data-title="Student Of The Year 2025">
-<img src="assets/img/SOTY.jpg" class="rounded-xl w-full h-48 object-cover shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl" />
-</a>
-<p class="mt-2 text-center text-gray-700 dark:text-gray-300 font-medium">Student of The Year 2025</p>
-</div>
-
-
-<div class="group cursor-pointer gallery-item animate-item">
-<a href="img-namafile.jpg" data-lightbox="gallery" data-title="KKL Vietnam">
-<img src="assets/img/KKL Vietnam.jpg" class="rounded-xl w-full h-48 object-cover shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl" />
-</a>
-<p class="mt-2 text-center text-gray-700 dark:text-gray-300 font-medium">KKL Vietnam 2025</p>
-</div>
-</div>
-</div>
+    </div>
+  </div>
 </section>
+
+<style>
+  .industri-card {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(15px);
+    border-radius: 22px;
+    padding: 28px 20px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.7);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: all .35s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .industri-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.18);
+    border-color: rgba(59,130,246,0.5);
+  }
+
+  .industri-card::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #93c5fd66, #a5b4fc66);
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0;
+    transition: .4s ease;
+  }
+
+  .industri-card:hover::after {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  .industri-logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 16px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #d0d7ff, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: all .35s ease;
+  }
+
+  .industri-logo img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+  }
+
+  .industri-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 6px;
+  }
+
+  .industri-desc {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+</style>
+
+
+    <!-- Prestasi Premium -->
+<section id="prestasi" class="py-24 bg-gradient-to-b from-white to-blue-50 relative overflow-hidden">
+
+  <!-- Background Blur -->
+  <div class="absolute top-0 left-0 w-72 h-72 bg-blue-200/30 blur-[120px] rounded-full -z-10"></div>
+  <div class="absolute bottom-0 right-0 w-72 h-72 bg-indigo-300/30 blur-[140px] rounded-full -z-10"></div>
+
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-extrabold text-center mb-14 text-blue-900 tracking-wide drop-shadow-sm">
+      Prestasi Unggulan
+    </h2>
+
+    <div class="carousel mb-4">
+      <div class="flex items-center justify-between mb-3">
+        <div class="text-sm text-gray-600 font-medium">Beberapa prestasi terbaru & terbaik</div>
+        <div class="flex gap-2">
+          <button id="prevPrestasi" class="px-3 py-1 rounded-full border border-gray-300 hover:bg-blue-500 hover:text-white transition">◀</button>
+          <button id="nextPrestasi" class="px-3 py-1 rounded-full border border-gray-300 hover:bg-blue-500 hover:text-white transition">▶</button>
+        </div>
+      </div>
+
+      <div class="carousel-track flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory" id="prestasiTrack">
+
+        <!-- Card 1 -->
+        <div class="carousel-item prestasi-card snap-start">
+          <div class="prestasi-img">
+            <img src="assets/img/juara2.jpg" alt="Prestasi 1">
+            <div class="overlay">
+              <span class="ribbon">Juara 2</span>
+              <div class="prestasi-info">
+                <h3>Inovasi Kota Semarang</h3>
+                <p>29 Nov 2024</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="carousel-item prestasi-card snap-start">
+          <div class="prestasi-img">
+            <img src="assets/img/kominfo.jpg" alt="Prestasi 2">
+            <div class="overlay">
+              <span class="ribbon">Top Project</span>
+              <div class="prestasi-info">
+                <h3>Digital Talent Kominfo</h3>
+                <p>Program pelatihan Kominfo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="carousel-item prestasi-card snap-start">
+          <div class="prestasi-img">
+            <img src="assets/img/smartcity.jpg" alt="Prestasi 3">
+            <div class="overlay">
+              <span class="ribbon">Juara 1</span>
+              <div class="prestasi-info">
+                <h3>Innovative Project Showcase</h3>
+                <p>Proyek kota cerdas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
   </div>
-</div>
 </section>
-   <!-- Pendaftaran Form -->
-    <section id="pendaftaran" class="py-12 bg-gray-50">
-      </head>
-      <body class="bg-gray-100 dark:bg-gray-900 transition duration-500">
-      <div class="max-w-2xl mx-auto p-8 fade-in">
-      <h1 class="text-center text-3xl font-bold text-blue-600 dark:text-blue-400 mb-6">Pendaftaran</h1>
-      <div class="bg-gradient-to-br from-blue-200 via-yellow-100 to-gray-200 p-8 rounded-xl shadow card-hover">
-      <form id="formPendaftaran" class="space-y-5">
+
+<style>
+  .prestasi-card {
+    min-width: 260px;
+    flex: 0 0 auto;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .prestasi-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 50px rgba(59,130,246,0.3);
+  }
+
+  .prestasi-img {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .prestasi-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+
+  .prestasi-card:hover img {
+    transform: scale(1.1);
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.05));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .prestasi-card:hover .overlay {
+    opacity: 1;
+  }
+
+  .ribbon {
+    position: absolute;
+    top: 12px;
+    left: -10px;
+    background: #3b82f6;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    transform: rotate(-15deg);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .prestasi-info h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .prestasi-info p {
+    font-size: 0.875rem;
+    color: #e0e7ff;
+  }
+
+  .carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  const track = document.getElementById('prestasiTrack');
+  document.getElementById('prevPrestasi').addEventListener('click', () => {
+    track.scrollBy({ left: -280, behavior: 'smooth' });
+  });
+  document.getElementById('nextPrestasi').addEventListener('click', () => {
+    track.scrollBy({ left: 280, behavior: 'smooth' });
+  });
+</script>
 
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<input type="text" placeholder="Nama Lengkap" class="focus-anim w-full p-3 rounded-lg border dark:border-gray-700 dark:bg-gray-700 dark:text-white">
-<input type="email" placeholder="Email" class="focus-anim w-full p-3 rounded-lg border dark:border-gray-700 dark:bg-gray-700 dark:text-white">
-</div>
+    <!-- Berita & Kegiatan -->
+<section id="berita" class="py-16 bg-gradient-to-b from-white to-blue-50/40 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <h2 class="text-4xl font-extrabold text-center mb-12 text-blue-900 tracking-wide drop-shadow-sm">
+      Berita & Kegiatan
+    </h2>
+
+    <!-- Carousel Container -->
+    <div class="relative">
+      <!-- Scroll Buttons -->
+      <button id="prevNews" class="absolute left-0 top-1/2 -translate-y-1/2 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition z-10">◀</button>
+      <button id="nextNews" class="absolute right-0 top-1/2 -translate-y-1/2 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition z-10">▶</button>
+
+      <!-- Carousel Track -->
+      <div id="newsTrack" class="flex overflow-x-auto gap-6 scroll-smooth py-4 px-2">
+        
+        <!-- Item 1 -->
+        <a href="https://youtu.be/UhD8uukQgAM?si=l_IMt4KqJKa04YgW" class="carousel-item min-w-[280px] flex-shrink-0">
+          <article class="bg-white rounded-3xl shadow-lg hover:scale-105 transition-transform duration-300">
+            <img src="assets/img/kominfo.jpg" alt="Berita 1" class="w-full h-40 object-cover rounded-t-3xl">
+            <div class="p-4">
+              <h3 class="font-semibold text-blue-900 mb-2">Mahasiswa Sukses Raih Peluang Karir</h3>
+              <p class="text-sm text-gray-600">Program Digital Talent Kominfo memberikan pelatihan praktis.</p>
+              <p class="text-xs text-gray-400 mt-2">29 Nov 2024</p>
+            </div>
+          </article>
+        </a>
+
+        <!-- Item 2 -->
+        <a href="https://siega.id/2024/11/30/mahasiswa-siega-raih-juara-2-gelar-inovasi-teknologi-kota-semarang/" class="carousel-item min-w-[280px] flex-shrink-0">
+          <article class="bg-white rounded-3xl shadow-lg hover:scale-105 transition-transform duration-300">
+            <img src="assets/img/juara2.jpg" alt="Berita 2" class="w-full h-40 object-cover rounded-t-3xl">
+            <div class="p-4">
+              <h3 class="font-semibold text-blue-900 mb-2">Juara 2 Gelar Inovasi Teknologi</h3>
+              <p class="text-sm text-gray-600">Proyek Kota Cerdas tim kami.</p>
+              <p class="text-xs text-gray-400 mt-2">12 Des 2024</p>
+            </div>
+          </article>
+        </a>
+
+        <!-- Item 3 -->
+        <a href="https://www.youtube.com/live/-ELPGgoW8QY?si=D2O-UBEzRJngtS5b" class="carousel-item min-w-[280px] flex-shrink-0">
+          <article class="bg-white rounded-3xl shadow-lg hover:scale-105 transition-transform duration-300">
+            <img src="assets/img/workshop_ar.jpg" alt="Berita 3" class="w-full h-40 object-cover rounded-t-3xl">
+            <div class="p-4">
+              <h3 class="font-semibold text-blue-900 mb-2">Workshop AR</h3>
+              <p class="text-sm text-gray-600">Workshop permainan augmented reality bagi mahasiswa.</p>
+              <p class="text-xs text-gray-400 mt-2">15 Jan 2025</p>
+            </div>
+          </article>
+        </a>
+
+        <!-- Item 4 -->
+        <a href="https://www.instagram.com/bbcc.hmpssi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="carousel-item min-w-[280px] flex-shrink-0">
+          <article class="bg-white rounded-3xl shadow-lg hover:scale-105 transition-transform duration-300">
+            <img src="assets/img/cbc.jpg" alt="Berita 4" class="w-full h-40 object-cover rounded-t-3xl">
+            <div class="p-4">
+              <h3 class="font-semibold text-blue-900 mb-2">Kegiatan CBC Mahasiswa</h3>
+              <p class="text-sm text-gray-600">Program pelatihan mahasiswa yang dilaksanakan oleh HMPSSI SIEGA.</p>
+              <p class="text-xs text-gray-400 mt-2">13 September 2022</p>
+            </div>
+          </article>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Hide scrollbar but still scrollable */
+  #newsTrack::-webkit-scrollbar {
+    display: none;
+  }
+  #newsTrack {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  const track = document.getElementById('newsTrack');
+  document.getElementById('prevNews').addEventListener('click', () => {
+    track.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+  document.getElementById('nextNews').addEventListener('click', () => {
+    track.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+</script>
 
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<input type="text" placeholder="No. WhatsApp" class="focus-anim w-full p-3 rounded-lg border dark:border-gray-700 dark:bg-gray-700 dark:text-white">
-<select class="focus-anim w-full p-3 rounded-lg border dark:border-gray-700 dark:bg-gray-700 dark:text-white">
-<option>Pilih Program</option>
-<option>Sistem Informasi</option>
-<option>Akuntansi + Sistem Informasi</option>
-<option>Game Technology</option>
-<option>Ecommerce</option>
-</select>
-</div>
 
-<div class="flex items-center gap-2">
-<input type="checkbox" class="h-4 w-4">
-<label class="dark:text-gray-300">Saya menyetujui data ini digunakan untuk proses pendaftaran</label>
-</div>
+    <!-- Galeri Kegiatan dengan Glow Biru -->
+<section id="galeri" class="py-12 bg-white dark:bg-gray-900">
+  <div class="max-w-6xl mx-auto px-6 reveal">
+    <h2 class="text-3xl font-bold text-center mb-6 text-blue-800 dark:text-white">Galeri</h2>
+    <div class="grid md:grid-cols-3 gap-6 animate-fadeIn">
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-<div>
-<label class="dark:text-gray-300">Upload Foto*</label>
-<input type="file" id="file_$1" $1 required>
-</div>
-<div>
-<label class="dark:text-gray-300">Upload Ijazah*</label>
-<input type="file" id="file_$1" $1 required>
-</div>
-</div>
+      <!-- Galeri Item 1 -->
+      <div class="group cursor-pointer gallery-item animate-item relative">
+        <a href="img-namafile.jpg" data-lightbox="gallery" data-title="KKL Bali 2025">
+          <img src="assets/img/KKLBali.jpg" class="rounded-xl w-full h-48 object-cover shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl" />
+        </a>
+        <p class="mt-2 text-center font-medium glow-blue">KKL Bali 2025</p>
+      </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div>
-<label class="dark:text-gray-300">Upload Kartu Keluarga*</label>
-<input type="file" id="file_$1" $1 required>
-</div>
-<div>
-<label class="dark:text-gray-300">Upload Foto KTP*</label>
-<input type="file" id="file_$1" $1 required>
-</div>
-</div>
+      <!-- Galeri Item 2 -->
+      <div class="group cursor-pointer gallery-item animate-item relative">
+        <a href="img-namafile.jpg" data-lightbox="gallery" data-title="Student Of The Year 2025">
+          <img src="assets/img/SOTY.jpg" class="rounded-xl w-full h-48 object-cover shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl" />
+        </a>
+        <p class="mt-2 text-center font-medium glow-blue">Student of The Year 2025</p>
+      </div>
 
-<div class="flex gap-4 mt-6">
-<button class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition focus-anim" onclick="return validateForm()" hover:bg-blue-700 text-white rounded-lg transition focus-anim">Kirim Pendaftaran</button>
-<button type="reset" class="px-5 py-2 bg-gray-300 hover:bg-gray-400 dark:bg-gray-700 dark:text-white rounded-lg transition focus-anim">Reset</button>
-</div>
-</form>
-<div id="warning-box" class="hidden mt-4 p-3 rounded-lg bg-yellow-200 text-yellow-900 border border-yellow-400 font-semibold"></div>
-</div>
-</div>
-    </section>
+      <!-- Galeri Item 3 -->
+      <div class="group cursor-pointer gallery-item animate-item relative">
+        <a href="img-namafile.jpg" data-lightbox="gallery" data-title="KKL Vietnam">
+          <img src="assets/img/KKL Vietnam.jpg" class="rounded-xl w-full h-48 object-cover shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl" />
+        </a>
+        <p class="mt-2 text-center font-medium glow-blue">KKL Vietnam 2025</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* Glow biru luar, teks putih dalam */
+.glow-blue {
+  position: relative;
+  color: white; /* teks utama putih */
+  text-shadow: 
+    0 0 5px #3b82f6,   /* biru luar */
+    0 0 10px #2563eb,  /* biru medium */
+    0 0 15px #1d4ed8;  /* biru gelap */
+  transition: all 0.4s ease-in-out;
+}
+
+.glow-blue:hover {
+  text-shadow: 
+    0 0 10px #3b82f6,
+    0 0 20px #2563eb,
+    0 0 30px #1d4ed8,
+    0 0 40px #3b82f6;
+  transform: scale(1.05);
+}
+</style>
+
+   <!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pendaftaran Super Interaktif</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+/* Hover & Focus Animations */
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.focus-anim:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59,130,246,0.5);
+}
+
+/* Fade In */
+.fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+/* Neon Button */
+.neon-btn {
+  background: #0ea5e9;
+  color: white;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px #0ea5e9, 0 0 10px #0ea5e9, 0 0 20px #0ea5e9;
+  transition: all 0.3s ease-in-out;
+}
+.neon-btn:hover {
+  box-shadow: 0 0 10px #0ea5e9, 0 0 20px #0ea5e9, 0 0 40px #0ea5e9;
+  transform: scale(1.05);
+}
+
+/* Tombol Reset neon */
+.reset-btn {
+  background: #787f8a;
+  box-shadow: 0 0 5px #787f8a, 0 0 10px #787f8a, 0 0 20px #787f8a;
+}
+.reset-btn:hover {
+  box-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6, 0 0 40px #3b82f6;
+  transform: scale(1.05);
+}
+
+/* File Preview */
+.file-preview {
+  font-size: 0.9rem;
+  color: #1e3a8a;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+/* Judul gradient neon */
+.wow-title {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #2d579b, #2d579b, #e3e885);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 5px #2d579b, 0 0 10px #2d579b, 0 0 20px #e3e885;
+  animation: pulseTitle 2s infinite alternate;
+}
+@keyframes pulseTitle {
+  0% { text-shadow: 0 0 5px #2d579b, 0 0 10px #2d579b, 0 0 20px #e3e885; }
+  50% { text-shadow: 0 0 10px #2d579b, 0 0 20px #2d579b, 0 0 40px #e3e885; }
+  100% { text-shadow: 0 0 5px #2d579b, 0 0 10px #2d579b, 0 0 20px #e3e885; }
+}
+</style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 transition duration-500">
+
+<!-- Pendaftaran Form Super Interaktif -->
+<section id="pendaftaran" class="py-16 bg-gray-50 dark:bg-gray-900 transition duration-500">
+  <div class="max-w-2xl mx-auto p-8 fade-in">
+    
+    <!-- Judul wow -->
+    <h1 class="text-center wow-title mb-8">Pendaftaran</h1>
+    
+    <div class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 p-8 rounded-2xl shadow-2xl card-hover">
+      <form id="formPendaftaran" class="space-y-6">
+
+        <!-- Nama & Email -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Nama Lengkap" class="focus-anim w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-400 transition">
+          <input type="email" placeholder="Email" class="focus-anim w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-400 transition">
+        </div>
+
+        <!-- WA & Program -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" placeholder="No. WhatsApp" class="focus-anim w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-400 transition">
+          <select class="focus-anim w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-400 transition">
+            <option>Pilih Program</option>
+            <option>Sistem Informasi</option>
+            <option>Akuntansi + Sistem Informasi</option>
+            <option>Game Technology</option>
+            <option>Ecommerce</option>
+          </select>
+        </div>
+
+        <!-- Checkbox -->
+        <div class="flex items-center gap-2">
+          <input type="checkbox" class="h-4 w-4">
+          <label class="dark:text-gray-300">Saya menyetujui data ini digunakan untuk proses pendaftaran</label>
+        </div>
+
+        <!-- Upload berkas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          <div>
+            <label class="dark:text-gray-300 font-semibold">Upload Foto*</label>
+            <input type="file" class="file-input w-full mt-1" data-preview="preview-foto">
+            <div id="preview-foto" class="mt-2"></div>
+          </div>
+          <div>
+            <label class="dark:text-gray-300 font-semibold">Upload Ijazah*</label>
+            <input type="file" class="file-input w-full mt-1" data-preview="preview-ijazah">
+            <div id="preview-ijazah" class="mt-2"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="dark:text-gray-300 font-semibold">Upload Kartu Keluarga*</label>
+            <input type="file" class="file-input w-full mt-1" data-preview="preview-kk">
+            <div id="preview-kk" class="mt-2"></div>
+          </div>
+          <div>
+            <label class="dark:text-gray-300 font-semibold">Upload Foto KTP*</label>
+            <input type="file" class="file-input w-full mt-1" data-preview="preview-ktp">
+            <div id="preview-ktp" class="mt-2"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="dark:text-gray-300 font-semibold">Upload Sertifikat Prestasi/Juara</label>
+            <input type="file" class="file-input w-full mt-1" data-preview="preview-sertifikat">
+            <div id="preview-sertifikat" class="mt-2"></div>
+          </div>
+          <div>
+            <label class="dark:text-gray-300 font-semibold">Upload Nilai Rapor</label>
+            <input type="file" class="file-input w-full mt-1" data-preview="preview-rapor">
+            <div id="preview-rapor" class="mt-2"></div>
+          </div>
+        </div>
+
+        <!-- Tombol -->
+        <div class="flex flex-col md:flex-row gap-4 mt-6">
+          <button type="submit" class="px-6 py-3 neon-btn">Kirim Pendaftaran</button>
+          <button type="reset" class="px-6 py-3 neon-btn reset-btn">Reset</button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="mt-4">
+          <div class="h-3 w-full bg-gray-200 rounded-full overflow-hidden">
+            <div class="h-3 bg-blue-500 rounded-full transition-all" id="progress-bar" style="width: 0%;"></div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+// Preview File & Highlight nama file
+document.querySelectorAll('.file-input').forEach(input => {
+  input.addEventListener('change', function(){
+    const previewId = this.dataset.preview;
+    const previewDiv = document.getElementById(previewId);
+    previewDiv.innerHTML = '';
+    Array.from(this.files).forEach(file => {
+      const div = document.createElement('div');
+      div.className = 'file-preview';
+      div.textContent = '📄 ' + file.name;
+      previewDiv.appendChild(div);
+    });
+  });
+});
+
+// Simulasi Progress Bar
+const form = document.getElementById('formPendaftaran');
+const progressBar = document.getElementById('progress-bar');
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  let width = 0;
+  const interval = setInterval(() => {
+    if(width >= 100){
+      clearInterval(interval);
+      alert('Pendaftaran berhasil dikirim!');
+      progressBar.style.width = '0%';
+      form.reset();
+      document.querySelectorAll('.file-preview').forEach(div => div.innerHTML='');
+    } else {
+      width += 5;
+      progressBar.style.width = width + '%';
+    }
+  }, 100);
+});
+</script>
+
+</body>
+</html>
+
+
 
     <!-- Kontak + Maps -->
     <section id="kontak" class="py-12 bg-white">
@@ -1185,77 +1752,75 @@ return false;
   </main>
 
   <!-- Footer -->
-  <footer class="py-8 bg-white mt-8">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6 items-start">
-      <div>
-        <div class="text-xl font-bold" style="color:var(--blue)">SIEGA</div>
-        <p class="text-sm text-gray-600 mt-2">Pusat pengembangan pendidikan berbasis teknologi dan bisnis masa depan.</p>
-        <div class="mt-4 flex gap-3"><a href="#" class="text-blue-600">Instagram</a><a href="#" class="text-blue-600">YouTube</a><a href="#" class="text-blue-600">TikTok</a></div>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2">Quick Links</h4>
-        <ul class="text-sm text-gray-600 space-y-1"><li><a href="#kurikulum">Kurikulum</a></li><li><a href="#prestasi">Prestasi</a></li><li><a href="#berita">Berita</a></li><li><a href="#pendaftaran">Pendaftaran</a></li></ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2">Kontak</h4>
-        <p class="text-sm text-gray-600">Jl. Pawiyatan Luhur IV/1, Semarang</p>
-        <p class="text-sm text-gray-600 mt-2">Senin - Jumat, 08:00 - 15:00</p>
-        <a href="https://wa.me/6285727284162" class="inline-block mt-3 btn">Hubungi via WA</a>
+<footer class="py-12 bg-[#0B1E4A] mt-12 border-t border-gray-700 w-full text-gray-200">
+  <div class="px-6 grid md:grid-cols-3 gap-8 items-start w-full">
+    <!-- Logo & Sosial Media -->
+    <div>
+      <div class="text-2xl font-bold text-white mb-2">SIEGA</div>
+      <p class="text-gray-300 text-sm">Pusat pengembangan pendidikan berbasis teknologi dan bisnis masa depan.</p>
+      <div class="mt-4 flex gap-3">
+        <a href="https://www.instagram.com/siega_unika" target="_blank" class="flex items-center gap-1 text-pink-400 hover:text-pink-600 transition-colors">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://www.youtube.com/@siegaunikasoegijapranata8217" target="_blank" class="flex items-center gap-1 text-red-500 hover:text-red-700 transition-colors">
+          <i class="fab fa-youtube"></i> YouTube
+        </a>
+        <a href="https://www.tiktok.com/@siega_unika" target="_blank" class="flex items-center gap-1 text-purple-400 hover:text-purple-600 transition-colors">
+          <i class="fab fa-tiktok"></i> TikTok
+        </a>
       </div>
     </div>
-    <div class="max-w-7xl mx-auto px-6 mt-6 text-center text-gray-500">© 2025 SIEGA Soegijapranata Chatolic University</div>
-  </footer>
 
-  <!-- Floating WhatsApp -->
-  <a class="whatsapp-fab" href="https://wa.me/6285727284162" target="_blank" aria-label="WhatsApp">💬</a>
+    <!-- Quick Links -->
+    <div>
+      <h4 class="font-semibold mb-3 text-white">Quick Links</h4>
+      <ul class="space-y-2 text-gray-300 text-sm">
+        <li><a href="#kurikulum" class="hover:text-blue-400 transition-colors">Kurikulum</a></li>
+        <li><a href="#prestasi" class="hover:text-blue-400 transition-colors">Prestasi</a></li>
+        <li><a href="#berita" class="hover:text-blue-400 transition-colors">Berita</a></li>
+        <li><a href="#pendaftaran" class="hover:text-blue-400 transition-colors">Pendaftaran</a></li>
+      </ul>
+    </div>
 
-  <!-- lightbox -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
+    <!-- Kontak -->
+    <div>
+      <h4 class="font-semibold mb-3 text-white">Kontak</h4>
+      <p class="text-gray-300 text-sm">Jl. Pawiyatan Luhur IV/1, Semarang</p>
+      <p class="text-gray-300 text-sm mt-1">Senin - Jumat, 08:00 - 15:00</p>
+      <a href="https://wa.me/6285727284162" target="_blank" class="inline-block mt-4 px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 transition-colors">Hubungi via WA</a>
+    </div>
+  </div>
 
-  <script>
-    // mobile menu toggle
-    document.getElementById('burger').addEventListener('click', function(){ document.getElementById('mobileMenu').classList.toggle('hidden'); });
+  <!-- Copyright -->
+  <div class="px-6 mt-8 text-center text-gray-400 text-sm w-full">© 2025 SIEGA Soegijapranata Catholic University</div>
+</footer>
 
-    // dark mode persistent
-    const root = document.body;
-    const darkToggle = document.getElementById('darkToggle');
-    function applyTheme(t){ if(t==='dark'){ root.setAttribute('data-theme','dark'); darkToggle.textContent='☀️'} else { root.setAttribute('data-theme','light'); darkToggle.textContent='🌙' } }
-    const saved = localStorage.getItem('siega-theme')||'light'; applyTheme(saved);
-    darkToggle.addEventListener('click', ()=>{ const cur=root.getAttribute('data-theme')==='dark'?'light':'dark'; applyTheme(cur); localStorage.setItem('siega-theme',cur); });
+<!-- Floating WhatsApp -->
+<a class="whatsapp-fab fixed bottom-6 right-6 z-50" href="https://wa.me/6285727284162" target="_blank" aria-label="WhatsApp">
+  <img src="assets/img/wa.jpg" alt="WhatsApp" style="width:50px; height:50px; border-radius:50%; box-shadow:0 4px 12px rgba(0,0,0,0.4);">
+</a>
 
-    // active nav highlight
-    const navLinks = document.querySelectorAll('a[href^="#"]');
-    const sections = document.querySelectorAll('section');
-    function setActive(){ let current=''; sections.forEach(s=>{ const top=s.offsetTop-160; if(window.pageYOffset>=top) current=s.id }); navLinks.forEach(a=>{ a.classList.remove('active'); if(a.getAttribute('href')=='#'+current) a.classList.add('active') }); }
-    window.addEventListener('scroll', setActive); window.addEventListener('load', setActive);
+<!-- Scripts -->
+<script>
+  function initMiniCarousel(trackId,prevId,nextId){
+    const track=document.getElementById(trackId);
+    if(!track) return;
+    const prev=document.getElementById(prevId);
+    const next=document.getElementById(nextId);
+    const itemWidth=track.querySelector('.carousel-item')?.offsetWidth+16||0;
+    prev?.addEventListener('click',()=>track.scrollBy({left:-itemWidth,behavior:'smooth'}));
+    next?.addEventListener('click',()=>track.scrollBy({left:itemWidth,behavior:'smooth'}));
+  }
+  initMiniCarousel('prestasiTrack','prevPrestasi','nextPrestasi');
+  initMiniCarousel('newsTrack','prevNews','nextNews');
 
-    // hero slider (pure js)
-    (function(){ const slides=document.getElementById('slides'); const count=slides.children.length; let idx=0; const dotsWrap=document.getElementById('dots'); for(let i=0;i<count;i++){ const d=document.createElement('button'); d.className='dot'; d.dataset.i=i; d.addEventListener('click', ()=>goTo(i)); dotsWrap.appendChild(d);} function updateDots(){ Array.from(dotsWrap.children).forEach((b,i)=> b.classList.toggle('active', i===idx)); }
-      function goTo(i){ idx=(i+count)%count; slides.style.transform='translateX(-'+(idx*100)+'%)'; updateDots(); }
-      document.getElementById('prevSlide').addEventListener('click', ()=> goTo(idx-1)); document.getElementById('nextSlide').addEventListener('click', ()=> goTo(idx+1)); updateDots(); let auto=setInterval(()=> goTo(idx+1),6000); slides.parentElement.addEventListener('mouseenter', ()=> clearInterval(auto)); slides.parentElement.addEventListener('mouseleave', ()=> auto=setInterval(()=> goTo(idx+1),6000));
-    })();
+  // Reveal on scroll
+  const reveals=document.querySelectorAll('.reveal');
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  },{threshold:0.1});
+  reveals.forEach(r=>io.observe(r));
+</script>
 
-    // mini carousels
-    function initMiniCarousel(trackId, prevId, nextId){ const track=document.getElementById(trackId); const prev=document.getElementById(prevId); const next=document.getElementById(nextId); if(!track) return; const itemWidth=track.querySelector('.carousel-item').offsetWidth+16; prev.addEventListener('click', ()=> track.scrollBy({left:-itemWidth,behavior:'smooth'})); next.addEventListener('click', ()=> track.scrollBy({left:itemWidth,behavior:'smooth'})); }
-    initMiniCarousel('prestasiTrack','prevPrestasi','nextPrestasi'); initMiniCarousel('newsTrack','prevNews','nextNews');
-
-    // reveal on scroll
-    const reveals=document.querySelectorAll('.reveal'); const io=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } }); },{threshold:0.12}); reveals.forEach(r=> io.observe(r));
-
-    // form
-    const regForm=document.getElementById('regForm'); if(regForm){ regForm.addEventListener('submit', function(e){ e.preventDefault(); const nama=document.getElementById('nama').value.trim(); const email=document.getElementById('email').value.trim(); const phone=document.getElementById('phone').value.trim(); const agree=document.getElementById('agree').checked; if(!nama||!email||!phone||!agree){ alert('Mohon lengkapi semua field dan setujui kebijakan.'); return } document.getElementById('formMsg').textContent='Terima kasih! Pendaftaran Anda telah diterima.'; document.getElementById('formMsg').classList.remove('hidden'); regForm.reset(); }); document.getElementById('resetForm').addEventListener('click', ()=>{ regForm.reset(); document.getElementById('formMsg').classList.add('hidden'); }); }
-
-    // basic search filter
-    function basicSearch(query){ query=query.toLowerCase(); const cards=document.querySelectorAll('#berita .card-premium, #berita .carousel-item'); cards.forEach(c=>{ c.style.display = c.textContent.toLowerCase().includes(query) ? '' : 'none'; }); }
-    const deskSearch=document.getElementById('globalSearch'); if(deskSearch) deskSearch.addEventListener('input',(e)=> basicSearch(e.target.value)); const mobileSearch=document.getElementById('mobileSearch'); if(mobileSearch) mobileSearch.addEventListener('input',(e)=> basicSearch(e.target.value));
-
-    // keyboard slide
-    document.addEventListener('keydown', function(e){ if(e.key==='ArrowLeft') document.getElementById('prevSlide').click(); if(e.key==='ArrowRight') document.getElementById('nextSlide').click(); });
-
-    // lightbox options
-    if(window.lightbox) lightbox.option({resizeDuration:200,wrapAround:true});
-  </script>
 </body>
 </html>
-
-
