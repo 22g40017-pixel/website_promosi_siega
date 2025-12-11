@@ -1617,97 +1617,100 @@ return false;
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 transition duration-500">
 
-<!-- Pendaftaran Form Super Interaktif -->
+<!-<!-- Pendaftaran Form Super Interaktif -->
 <section id="pendaftaran" class="py-16 bg-gray-50 dark:bg-gray-900 transition duration-500">
   <div class="max-w-2xl mx-auto p-8 fade-in">
     
     <!-- Judul wow -->
     <h1 class="text-center wow-title mb-8">Pendaftaran</h1>
     
-    <div class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 p-8 rounded-2xl shadow-2xl card-hover">
-      <form id="formPendaftaran" class="space-y-6">
+    <div class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 
+            dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 
+            p-8 rounded-2xl shadow-2xl card-hover">
 
-        <!-- Nama & Email -->
+    <form action="proses_daftar.php" 
+          method="POST" 
+          enctype="multipart/form-data"
+          class="space-y-6">
+
+        <!-- INPUT NAMA & EMAIL -->
+        <input type="text" name="nama" placeholder="Nama Lengkap"
+            class="focus-anim w-full p-3 rounded-lg border border-gray-300 ...">
+
+        <input type="email" name="email" placeholder="Email"
+            class="focus-anim w-full p-3 rounded-lg border border-gray-300 ...">
+
+        <!-- GRID WA & PROGRAM -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input type="text" placeholder="Nama Lengkap" class="focus-anim w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-400 transition">
-          <input type="email" placeholder="Email" class="focus-anim w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-400 transition">
+            <input type="text" name="wa" placeholder="No. WhatsApp"
+                class="focus-anim w-full p-3 rounded-lg border border-gray-300 ...">
+
+            <select name="program" class="focus-anim w-full p-3 rounded-lg border ...">
+                <option value="">Pilih Program</option>
+                <option value="Sistem Informasi">Sistem Informasi</option>
+                <option value="Akuntansi + Sistem Informasi">Akuntansi + Sistem Informasi</option>
+                <option value="Game Technology">Game Technology</option>
+                <option value="Ecommerce">Ecommerce</option>
+            </select>
         </div>
 
-        <!-- WA & Program -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input type="text" placeholder="No. WhatsApp" class="focus-anim w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-400 transition">
-          <select class="focus-anim w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-400 transition">
-            <option>Pilih Program</option>
-            <option>Sistem Informasi</option>
-            <option>Akuntansi + Sistem Informasi</option>
-            <option>Game Technology</option>
-            <option>Ecommerce</option>
-          </select>
-        </div>
-
-        <!-- Checkbox -->
+        <!-- CHECKBOX -->
         <div class="flex items-center gap-2">
-          <input type="checkbox" class="h-4 w-4">
-          <label class="dark:text-gray-300">Saya menyetujui data ini digunakan untuk proses pendaftaran</label>
+            <input type="checkbox" name="setuju" required class="h-4 w-4">
+            <label>Saya menyetujui data ini digunakan untuk proses pendaftaran</label>
         </div>
 
-        <!-- Upload berkas -->
+        <!-- FILE UPLOAD PART 1 -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-          <div>
-            <label class="dark:text-gray-300 font-semibold">Upload Foto*</label>
-            <input type="file" class="file-input w-full mt-1" data-preview="preview-foto">
-            <div id="preview-foto" class="mt-2"></div>
-          </div>
-          <div>
-            <label class="dark:text-gray-300 font-semibold">Upload Ijazah*</label>
-            <input type="file" class="file-input w-full mt-1" data-preview="preview-ijazah">
-            <div id="preview-ijazah" class="mt-2"></div>
-          </div>
+            <div>
+                <label>Upload Foto*</label>
+                <input type="file" name="foto" class="file-input w-full mt-1">
+            </div>
+            <div>
+                <label>Upload Ijazah*</label>
+                <input type="file" name="ijazah" class="file-input w-full mt-1">
+            </div>
         </div>
 
+        <!-- FILE UPLOAD PART 2 -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label class="dark:text-gray-300 font-semibold">Upload Kartu Keluarga*</label>
-            <input type="file" class="file-input w-full mt-1" data-preview="preview-kk">
-            <div id="preview-kk" class="mt-2"></div>
-          </div>
-          <div>
-            <label class="dark:text-gray-300 font-semibold">Upload Foto KTP*</label>
-            <input type="file" class="file-input w-full mt-1" data-preview="preview-ktp">
-            <div id="preview-ktp" class="mt-2"></div>
-          </div>
+            <div>
+                <label>Upload Kartu Keluarga*</label>
+                <input type="file" name="kk" class="file-input w-full mt-1">
+            </div>
+            <div>
+                <label>Upload Foto KTP*</label>
+                <input type="file" name="ktp" class="file-input w-full mt-1">
+            </div>
         </div>
 
+        <!-- FILE UPLOAD PART 3 -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label class="dark:text-gray-300 font-semibold">Upload Sertifikat Prestasi/Juara</label>
-            <input type="file" class="file-input w-full mt-1" data-preview="preview-sertifikat">
-            <div id="preview-sertifikat" class="mt-2"></div>
-          </div>
-          <div>
-            <label class="dark:text-gray-300 font-semibold">Upload Nilai Rapor</label>
-            <input type="file" class="file-input w-full mt-1" data-preview="preview-rapor">
-            <div id="preview-rapor" class="mt-2"></div>
-          </div>
+            <div>
+                <label>Upload Sertifikat Prestasi/Juara</label>
+                <input type="file" name="sertifikat" class="file-input w-full mt-1">
+            </div>
+            <div>
+                <label>Upload Nilai Rapor</label>
+                <input type="file" name="rapor" class="file-input w-full mt-1">
+            </div>
         </div>
 
-        <!-- Tombol -->
+        <!-- BUTTON -->
         <div class="flex flex-col md:flex-row gap-4 mt-6">
-          <button type="submit" class="px-6 py-3 neon-btn">Kirim Pendaftaran</button>
-          <button type="reset" class="px-6 py-3 neon-btn reset-btn">Reset</button>
+            <button type="submit" class="px-6 py-3 neon-btn">Kirim Pendaftaran</button>
+            <button type="reset" class="px-6 py-3 neon-btn reset-btn">Reset</button>
         </div>
 
-        <!-- Progress Bar -->
+        <!-- PROGRESS BAR -->
         <div class="mt-4">
-          <div class="h-3 w-full bg-gray-200 rounded-full overflow-hidden">
-            <div class="h-3 bg-blue-500 rounded-full transition-all" id="progress-bar" style="width: 0%;"></div>
-          </div>
+            <div class="h-3 w-full bg-gray-200 rounded-full overflow-hidden">
+                <div class="h-3 bg-blue-500 rounded-full transition-all" id="progress-bar" style="width: 0%;"></div>
+            </div>
         </div>
 
-      </form>
-    </div>
-  </div>
-</section>
+    </form>
+</div>
 
 <script>
 // Preview File & Highlight nama file
